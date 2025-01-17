@@ -19,29 +19,48 @@ This reference will show R and Python code to read, view, manipulate, transform,
 * [Other Resources](#other-resources)
 * [Troubleshooting](#troubleshooting)
 
-> NOTE: Make sure there's spacing to allow Markdown to work with HTML elements
-
-<details open>
-<summary>Want to ruin the surprise?</summary>
-
-- Thing 1
-- Thing 2
-
-</details>
-
-<details>
-<summary>Want a surprise? (CLICK TO EXPAND)</summary>
-
-1. Thing A
-2. Thing B
-
-</details>
-
 ----------------------------------------------------------------------------
 
 ## 0. Requirements
 
-REQUIREMENTS.
+Only [R](https://www.r-project.org/about.html) and Python will be used in this reference. To quickly deploy either (or both, if you're adventurous!) of these programming languages and their development environments, I would suggest leveraging Docker.
+
+Instructions to install Docker for Windows 10/11 can be found here: [https://github.com/atet/wsl](https://github.com/atet/wsl?tab=readme-ov-file#4-cli-docker)
+
+After Docker is installed on your computer, click to expand the steps below to easily download and create the development environments:
+
+<details>
+<summary><a>R and RStudio</a></summary>
+
+</br>
+
+In your WSL terminal, download the `rocker/rstudio`<sup>1</sup> Docker image (~700 MB) and start the container:
+
+```bash
+$ docker pull rocker/rstudio:4.4.2
+$ docker run -dit -p 8787:8787 --name rstudio -e PASSWORD=rstudio rocker/rstudio:4.4.2
+```
+
+In a web browser, visit http://localhost:8787 and log into RStudio using the username `rstudio` and password `rstudio`.
+
+</details>
+<details>
+<summary><a>Python and Jupyter Notebook</a></summary>
+
+</br>
+
+In your WSL terminal, download the `jupyter/minimal-notebook`<sup>2</sup> Docker image (~450 MB) and start the container:
+
+```bash
+$ docker pull jupyter/minimal-notebook:x86_64-ubuntu-22.04
+$ docker run -dit -p 8888:8888 --name jupyter -e JUPYTER_TOKEN=jupyter jupyter/minimal-notebook:x86_64-ubuntu-22.04
+```
+
+In a web browser, visit http://localhost:8888 and log into Jupyter using the token `jupyter`.
+
+</details>
+
+</br>
 
 [Back to Top](#table-of-contents)
 
@@ -94,6 +113,17 @@ null | null
 Issue | Solution
 --- | ---
 **"It's not working!"** | This concise tutorial has distilled hours of sweat, tears, and troubleshooting; _it can't not work_
+
+[Back to Top](#table-of-contents)
+
+----------------------------------------------------------------------------
+
+## References
+
+Citation | Description | Docker Hub Link
+--- | --- | ---
+**1** | R and RStudio Server Docker image from [Rocker Project](https://rocker-project.org/) | https://hub.docker.com/r/rocker/rstudio
+**2** | Python and Jupyter Labs Docker image from [Jupyter Project](https://jupyter.org/) | https://hub.docker.com/r/jupyter/minimal-notebook
 
 [Back to Top](#table-of-contents)
 
