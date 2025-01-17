@@ -9,7 +9,7 @@ This reference will show R and Python code to read, view, manipulate, transform,
 ## Table of Contents
 
 * [0. Requirements](#0-requirements)
-* [1. Introduction](#1-introduction)
+* [1. Source Data](#1-source-data)
 * [2. Installation](#2-installation)
 * [3. Basic Examples](#3-basic-examples)
 * [4. Next Steps](#4-next-steps)
@@ -66,9 +66,21 @@ In a web browser, visit http://localhost:8888 and log into Jupyter using the tok
 
 ----------------------------------------------------------------------------
 
-## 1. Introduction
+## 1. Source Data
 
-INTRODUCTION.
+We will be working with a simple comma-separated (CSV) file that could be downloaded directly from this GitHub repository into your programming environment or simply copy/pasted into a new file called `office.csv`.
+
+This file contains three rows (a.k.a. records) and three columns (a.k.a. fields) for a total of nine cells (not including column headers):
+
+```bash
+ID,FIRST NAME,QUOTE
+2,Pam,"Just go after what you want and act fast, because life just isn't that long."
+1,Pan,"There's a lot of beauty in ordinary things. Isn't that kind of the point?"
+3,Jan,"There are always a million reasons not to do something."
+```
+
+Troubleshooting:
+- Ensure that there are no spaces between delimiting commas as any "initial spaces" will cause issues with Microsoft Excel and Python Pandas reading the comma-separated value correctly.
 
 [Back to Top](#table-of-contents)
 
