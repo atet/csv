@@ -2,7 +2,7 @@
 
 [![.img/logo_csv.png](.img/logo_csv.png)](#nolink)
 
-This reference will show R and Python code to read, view, manipulate, transform, and save out comma-separated value (CSV) files. More advanced tabular file formats such as Excel Workbooks will not be covered here.
+This reference will show R and Python code to read, view, manipulate, transform, and save out comma-separated value (CSV) files. Though actions are largely similar, details and caveats regarding more advanced tabular file formats such as Excel Workbooks will not be covered here.
 
 ----------------------------------------------------------------------------
 
@@ -10,14 +10,18 @@ This reference will show R and Python code to read, view, manipulate, transform,
 
 * [0. Requirements](#0-requirements)
 * [1. Source Data](#1-source-data)
-* [2. Installation](#2-installation)
-* [3. Basic Examples](#3-basic-examples)
-* [4. Next Steps](#4-next-steps)
+* [2. Read and Write File](#2-read-and-write-file)
+* [3. Examine Contents](#3-examine-contents)
+* [4. Subsetting](#4-subsetting)
+* [5. Transforming](#5-transforming)
+* [6. Merging](#6-merging)
+* [7. Special](#7-special)
 
 ### Supplemental
 
 * [Other Resources](#other-resources)
 * [Troubleshooting](#troubleshooting)
+* [References](#references)
 
 ----------------------------------------------------------------------------
 
@@ -68,7 +72,7 @@ In a web browser, visit http://localhost:8888 and log into Jupyter using the tok
 
 ## 1. Source Data
 
-We will be working with a simple comma-separated (CSV) file that could be downloaded directly from this GitHub repository into your programming environment or simply copy/pasted into a new file called `office.csv`.
+We will be working with a simple comma-separated (CSV) file that could be downloaded directly from this GitHub repository into your programming environment ([here](https://raw.githubusercontent.com/atet/csv/refs/heads/main/dat/office.csv)) or simply copy/pasted into a new file called `office.csv`.
 
 This file contains three rows (a.k.a. records) and three columns (a.k.a. fields) for a total of nine cells (not including column headers):
 
@@ -86,30 +90,116 @@ Troubleshooting:
 
 ----------------------------------------------------------------------------
 
-## 2. Installation
+## 2. Read and Write File
 
-INSTALLATION.
+<table cellpadding="0" cellspacing="0" width="100%" border="0">
+<tr>
+<th>R</th>
+<th>Python</th>
+</tr>
+<tr>
+<td width="50%">
+
+```r
+# Read office.csv from GitHub as R data.frame object
+df = read.csv(
+    "https://raw.githubusercontent.com/atet/csv/refs/heads/main/dat/office.csv",
+    check.names = FALSE,
+    stringsAsFactors = FALSE
+)
+
+# View structure of the object
+str(df)
+
+# Save out object as office2.csv file to working directory
+write.csv(df, "office2.csv", row.names = FALSE)
+
+# View working directory where file was saved
+getwd()
+
+
+
+```
+
+</td>
+<td width="50%">
+
+```python
+# Install Pandas package and import packages
+import os
+os.system("pip install pandas")
+import pandas as pd
+
+# Read office.csv from GitHub as Pandas DataFrame object
+df = pd.read_csv(
+    "https://raw.githubusercontent.com/atet/csv/refs/heads/main/dat/office.csv"
+)
+
+# View structure of the object
+df.dtypes
+
+# Save out object as office2.csv file to working directory
+df.to_csv("office2.csv", index=False)
+
+# View working directory where file was saved
+os.getcwd()
+```
+
+</td>
+</tr>
+</table>
 
 [Back to Top](#table-of-contents)
 
 ----------------------------------------------------------------------------
 
-## 3. Basic Examples
+## 3. Examine Contents
 
-BASIC EXAMPLES.
-
-[Back to Top](#table-of-contents)
-
-----------------------------------------------------------------------------
-
-## 4. Next Steps
-
-NEXT STEPS.
+- Head/tail
+- Metadata/structure
+- Display all
 
 [Back to Top](#table-of-contents)
 
 ----------------------------------------------------------------------------
 
+## 4. Subsetting
+
+- Indices
+   - By row(s)
+   - By column(s)
+   - By row(s) and Column(s)
+- Matching (R infix)
+
+[Back to Top](#table-of-contents)
+
+----------------------------------------------------------------------------
+
+## 5. Transforming
+
+- Summarize/pivot
+- Split-apply-combine
+- NOTE: R vectorization only applies to R numeric matrices
+
+[Back to Top](#table-of-contents)
+
+----------------------------------------------------------------------------
+
+## 6. Merging
+
+- Joins (left, inner, right, outer)
+
+[Back to Top](#table-of-contents)
+
+----------------------------------------------------------------------------
+
+## 7. Special
+
+- Dates
+
+[Back to Top](#table-of-contents)
+
+----------------------------------------------------------------------------
 ## Other Resources
 
 **Description** | **URL Link**
