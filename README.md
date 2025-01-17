@@ -155,9 +155,54 @@ os.getcwd()
 
 ## 3. Examine Contents
 
-- Head/tail
-- Metadata/structure
-- Display all
+<table cellpadding="0" cellspacing="0" width="100%" border="0">
+<tr>
+<th>R</th>
+<th>Python</th>
+</tr>
+<tr>
+<td width="50%">
+
+```r
+# See the first two rows of the data
+head(df, n = 2)
+
+# See the last two rows of the data
+tail(df, n = 2)
+
+# Prints truncated output up to max.print = 1,000 default
+print(df)
+
+# Increase max.print number to display more
+options(max.print = 9999)
+print(df)
+
+
+```
+
+</td>
+<td width="50%">
+
+```python
+# See the first two rows of the data
+df.head(2)
+
+# See the last two rows of the data
+df.tail(2)
+
+# Prints truncated output if data exceeds display.min_rows = 10 default
+#  and up to display.max_rows = 60 default
+print(df)
+
+# Increase display.min/max_rows numbers to display more
+pd.set_option('display.max_rows', 9999)
+pd.set_option('display.max_rows', 100)
+print(df)
+```
+
+</td>
+</tr>
+</table>
 
 [Back to Top](#table-of-contents)
 
@@ -171,6 +216,29 @@ os.getcwd()
    - By row(s) and Column(s)
 - Matching (R infix)
 
+<table cellpadding="0" cellspacing="0" width="100%" border="0">
+<tr>
+<th>R</th>
+<th>Python</th>
+</tr>
+<tr>
+<td width="50%">
+
+```r
+
+```
+
+</td>
+<td width="50%">
+
+```python
+
+```
+
+</td>
+</tr>
+</table>
+
 [Back to Top](#table-of-contents)
 
 ----------------------------------------------------------------------------
@@ -181,6 +249,29 @@ os.getcwd()
 - Split-apply-combine
 - NOTE: R vectorization only applies to R numeric matrices
 
+<table cellpadding="0" cellspacing="0" width="100%" border="0">
+<tr>
+<th>R</th>
+<th>Python</th>
+</tr>
+<tr>
+<td width="50%">
+
+```r
+
+```
+
+</td>
+<td width="50%">
+
+```python
+
+```
+
+</td>
+</tr>
+</table>
+
 [Back to Top](#table-of-contents)
 
 ----------------------------------------------------------------------------
@@ -189,6 +280,29 @@ os.getcwd()
 
 - Joins (left, inner, right, outer)
 
+<table cellpadding="0" cellspacing="0" width="100%" border="0">
+<tr>
+<th>R</th>
+<th>Python</th>
+</tr>
+<tr>
+<td width="50%">
+
+```r
+
+```
+
+</td>
+<td width="50%">
+
+```python
+
+```
+
+</td>
+</tr>
+</table>
+
 [Back to Top](#table-of-contents)
 
 ----------------------------------------------------------------------------
@@ -196,6 +310,29 @@ os.getcwd()
 ## 7. Special
 
 - Dates
+
+<table cellpadding="0" cellspacing="0" width="100%" border="0">
+<tr>
+<th>R</th>
+<th>Python</th>
+</tr>
+<tr>
+<td width="50%">
+
+```r
+
+```
+
+</td>
+<td width="50%">
+
+```python
+
+```
+
+</td>
+</tr>
+</table>
 
 [Back to Top](#table-of-contents)
 
